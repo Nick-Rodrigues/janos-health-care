@@ -12,6 +12,7 @@ export default function Cadastro() {
   const [usuario, setUsuario] = useState({
     id: "",
     nome: "",
+    senha: "",
     nascimento: "",
     cpf: "",
     email: "",
@@ -64,6 +65,7 @@ export default function Cadastro() {
             setMsg("");
             setUsuario({
                 id: "",
+                senha: "",
                 nome: "",
                 nascimento: "",
                 cpf: "",
@@ -93,6 +95,17 @@ export default function Cadastro() {
                 id="idNome"
                 placeholder="Digite seu Nome."
                 value={usuario.nome}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="idSenha">Senha:</label>
+              <input
+                type="password"
+                name="senha"
+                id="idSenha"
+                placeholder="Digite sua Senha."
+                value={usuario.senha}
                 onChange={handleChange}
               />
             </div>

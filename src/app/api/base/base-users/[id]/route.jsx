@@ -16,17 +16,20 @@ export async function GET(request, {params}) {
 }
 
 export async function POST(request, response) {
+    // Obtendo arquivo db.json em forma de string
     const file = await fs.readFile(process.cwd() + '/src/app/api/base/db.json', 'utf-8');
 
+    // Transformando arquivo em um objeto e armazenando na variavel lista
     const lista = await JSON.parse(file);
 
     const userRequest = await request.json();
 
     try {
+        // Procurando o usuario na lista de usuarios
         for(let i=0; i < lista.usuarios.length; i++) {
             const userInfo = lista.usuarios[i];
 
-            if(userInfo.email == userRequest.email && userInfo.cpf == userRequest.cpf) {
+            if(userInfo.email == userRequest.email && userInfo.senha == userRequest.senha) {
                 return NextResponse.json({"status": true, "user": userInfo});
             }
         }

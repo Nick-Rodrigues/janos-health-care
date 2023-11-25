@@ -66,7 +66,8 @@ export default function Login() {
           setTimeout(() => {
             setMsg("");
             setUsuario({
-              email: ""
+              email: "",
+              senha:""
             });
        },3000);
       }
@@ -94,8 +95,19 @@ export default function Login() {
                 onChange={handleChange}
               />
             </div>
+            <div>
+              <label htmlFor="idSenha">Senha:</label>
+              <input
+                type="password"
+                name="senha"
+                id="idSenha"
+                placeholder="Digite sua Senha."
+                value={usuario.senha}
+                onChange={handleChange}
+              />
+            </div>
             <div className="button">
-              <button>Login</button>
+              <button type="submit">Login</button>
             </div>
             <div>
               <p>
