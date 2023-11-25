@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import "./login.modules.css";
 
 export default function Login() {
   const navigate = useRouter();
@@ -34,7 +35,7 @@ export default function Login() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/api/base/POST",
+        "http://localhost:3000/api/base/base-users/0",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -65,11 +66,10 @@ export default function Login() {
           setTimeout(() => {
             setMsg("");
             setUsuario({
-              email: "",
-              senha: "",
+              email: ""
             });
-        },3000);
-        }
+       },3000);
+      }
       }
     } catch (error) {
       console.error(error);

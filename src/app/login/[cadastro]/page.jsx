@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import "./cadastro.modules.css"
 
 export default function Cadastro() {
   const navigate = useRouter();
@@ -40,7 +41,7 @@ export default function Cadastro() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/base/POST", {
+      const response = await fetch("http://localhost:3000/api/base/base-cadastro", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +140,7 @@ export default function Cadastro() {
                 onChange={handleChange}
               />
             </div>
-            <legend className="cadastroBicicleta">Cadastro da bicicleta</legend>
+            <legend className="cadastroPaciente">Cadastro</legend>
             <div>
               <label htmlFor="idAltura">Altura:</label>
               <input

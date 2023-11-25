@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import "./cabecalho.modules.css";
 
 export default function Cabecalho() {
   const usuario =
@@ -54,9 +55,6 @@ export default function Cabecalho() {
         </figure>
         <nav>
           <ul>
-            <li>
-              <Link href="/">-HOME</Link>
-            </li>
             <li>
               <Link href="/login">-Login</Link>
             </li>
